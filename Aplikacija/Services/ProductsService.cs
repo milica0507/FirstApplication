@@ -25,5 +25,10 @@ namespace Aplikacija.Services
             _context.Products.Add(_product);
             _context.SaveChanges();
         }
+
+        public List<Product> GetAllProducts()
+        {
+            return _context.Products.ToList();
+        }
     }
 }

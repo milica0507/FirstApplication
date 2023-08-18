@@ -28,6 +28,14 @@ namespace Aplikacija.Controllers
             _productsService.AddProduct(product);
             return Ok(product);
         }
+
+        [HttpGet]
+        [Route("GetAllProducts")]
+        public IActionResult GetAllProducts()
+        {
+            var products=_productsService.GetAllProducts();
+            return Ok(products);
+        }
         //private readonly ApplicationDbContext _context;
 
         //public ProductsController(ApplicationDbContext context)
