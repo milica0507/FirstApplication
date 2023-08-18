@@ -23,10 +23,10 @@ namespace Aplikacija.Controllers
 
         [HttpPost]
         [Route("CreateProduct")]
-        public IActionResult CreateProduct([FromBody] ProductVM product)
+        public IActionResult CreateProduct([FromBody] ProductVM _product)
         {
-            _productsService.AddProduct(product);
-            return Ok(product);
+            _productsService.AddProduct(_product);
+            return Ok(_product);
         }
 
         [HttpGet]
