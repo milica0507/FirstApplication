@@ -30,8 +30,17 @@ namespace Aplikacija.Controllers
         [Route("GetPublisherData/{id}")]
         public IActionResult GetPublisherData(string id)
         {
-           var pub= _publisherService.GetPublisherData(id);
-            return Ok(pub);
+            try
+            {
+                var pub = _publisherService.GetPublisherData(id);
+                return Ok(pub);
+            }
+            catch (Exception)
+            {
+
+                return BadRequest("Sorry, we coluld not load the publisher...");
+            }
+          
         }
 
         [HttpGet]
