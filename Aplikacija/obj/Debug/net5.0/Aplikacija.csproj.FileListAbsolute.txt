@@ -160,3 +160,5 @@ C:\Users\ncoded\source\repos\Aplikacija\Aplikacija\bin\Debug\net5.0\Swashbuckle.
 C:\Users\ncoded\source\repos\Aplikacija\Aplikacija\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\ncoded\source\repos\Aplikacija\Aplikacija\obj\Debug\net5.0\Aplikacija.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ncoded\source\repos\Aplikacija\Aplikacija\obj\Debug\net5.0\Aplikacija.csproj.AssemblyReference.cache
+C:\Users\ncoded\source\repos\Aplikacija\Aplikacija\bin\Debug\net5.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\ncoded\source\repos\Aplikacija\Aplikacija\bin\Debug\net5.0\Microsoft.AspNetCore.Metadata.dll

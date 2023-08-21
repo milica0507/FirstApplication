@@ -37,5 +37,13 @@ namespace Aplikacija.Services
 
             return _author;
         }
+        public void DeleteAuthor(string id)
+        {
+            var author = _context.Authors.Where(x => x.AuthorId == id).FirstOrDefault();
+            if(author != null)
+            {
+                _context.Authors.Remove(author);
+            }
+        }
     }
 }

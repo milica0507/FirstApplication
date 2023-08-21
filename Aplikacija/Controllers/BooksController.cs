@@ -13,7 +13,7 @@ namespace Aplikacija.Controllers
     [Route("api/book")]
     public class BooksController : Controller
     {
-        //private readonly ApplicationDbContext _context;
+       
         public BooksService _booksService;
 
 
@@ -61,6 +61,22 @@ namespace Aplikacija.Controllers
             _booksService.DeleteBookById(id);
             return Ok();
         }
+
+        [HttpGet("get-book-by-name/{name}")]
+        public IActionResult GetBookByName(string name)
+        {
+            var book=_booksService.GetBookByName(name);
+            return Ok(book);
+        }
+        [HttpGet("get-publisher-of-book/{name}")]
+        public IActionResult GetPublisherOfBook(string name)
+        {
+            var book = _booksService.GetPublisherOfBook(name);
+            return Ok(book);
+        }
+
+
+
     }
 }
 

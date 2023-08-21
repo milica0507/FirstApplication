@@ -57,5 +57,36 @@ namespace Aplikacija.Controllers
             }
             
         }
+
+
+        [HttpGet("get-publisher/{name}")]
+        public IActionResult GetPublisher(string name)
+        {
+            try
+            {
+                var pub = _publisherService.GetPublisher(name);
+                return Ok(pub);
+            }
+            catch (Exception)
+            {
+
+                return BadRequest("Sorry, we coluld not load the publisher...");
+            }
+
+        }
+
+        [HttpPut("update-publisher/{id}")]
+        public IActionResult UpdatePublisher(string id,[FromBody] PublisherVM publisher)
+        {
+            var _publisher = _publisherService.UpdatePublisher(id, publisher);
+            return Ok(_publisher);
+        }
+
+        [HttpDelete("delete-publisher/{id}")]
+        public IActionResult DeletePublisher(string id)
+        {
+            _publisherService.DeletePublisherById(id);
+            return Ok();
+        }
     }
 }

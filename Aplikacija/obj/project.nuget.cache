@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "wwTnyBQibYd/CRgnswoF+vvLdASa4QOOME8cL0F/o0UaOJL+XdIiPwXu8HrGyHJbPGhIdha2eYQ77/mTxbCdyA==",
+  "dgSpecHash": "ixhqD46MDU1er0YPkmotzTKmjKobxIe02E56j+hJHh7xA4voFMTjqhmqE1mVX5LgNSiZ61oRCtVPnHk1pVIV/w==",
   "success": true,
   "projectFilePath": "C:\\Users\\ncoded\\source\\repos\\Aplikacija\\Aplikacija\\Aplikacija.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ncoded\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\ncoded\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.17\\microsoft.aspnetcore.authorization.5.0.17.nupkg.sha512",
     "C:\\Users\\ncoded\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\ncoded\\.nuget\\packages\\microsoft.aspnetcore.metadata\\5.0.17\\microsoft.aspnetcore.metadata.5.0.17.nupkg.sha512",
     "C:\\Users\\ncoded\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\ncoded\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
     "C:\\Users\\ncoded\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime\\2.2.0\\microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",

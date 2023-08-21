@@ -29,7 +29,7 @@ namespace Aplikacija
             services.AddTransient<PublisherService>();
             services.AddTransient<ProductsService>();
             services.AddTransient<CustomersService>();
-           
+            services.AddTransient<UsersService>();
             
 
             services.AddSwaggerGen(c =>

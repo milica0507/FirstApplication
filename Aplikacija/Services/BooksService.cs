@@ -64,6 +64,21 @@ namespace Aplikacija.Services
             return _bookWithAuthors;
         }
 
+        public BookWithAuthorsVM GetBookByName(string name)
+        {
+            var book = _context.Books.Where(n => n.Title == name).Select(_book => new BookWithAuthorsVM()
+            {
+                Title=_book.Title,
+                Description=_book.Description,
+                DateRead=_book.DateRead.Value,
+                Rate=(int)_book.Rate,
+                Genre=_book.Genre,
+                PublisherName=_book.Publisher.Name,
+                AuthorNames=_book.Book_Authors.Select(x=>x.Author.FullName).ToList()
+
+            }).FirstOrDefault();
+            return book;
+        }
         public Book UpdateBookById(string id,BookVM book)
         {
             var _book = _context.Books.FirstOrDefault(x => x.BookId == id);
@@ -80,6 +95,22 @@ namespace Aplikacija.Services
             return _book;
         }
 
+        public string GetPublisherOfBook(string id)
+        {
+            var _book = _context.Books.Where(x => x.BookId == id).Select(book => new
+            {
+                PublisherName=book.Publisher.Name
+            }).FirstOrDefault();
+
+            if(_book!=null)
+            {
+                return _book.PublisherName;
+            }
+            else
+            {
+                return "Publisher not found";
+            }
+        }
         public void  DeleteBookById(string id)
         {
             var _book = _context.Books.FirstOrDefault(x => x.BookId == id);

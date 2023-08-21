@@ -41,5 +41,14 @@ namespace Aplikacija.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpDelete("delete-author/{id}")]
+        public IActionResult DeleteAuthor(string  id)
+        {
+           
+              _authorsService.DeleteAuthor(id);
+               return Ok();
+            
+        }
     }
 }

@@ -225,3 +225,5 @@ C:\Users\ncoded\source\repos\Aplikacija\Application-tests\obj\Debug\net5.0\Appli
 C:\Users\ncoded\source\repos\Aplikacija\Application-tests\obj\Debug\net5.0\ref\Application-tests.dll
 C:\Users\ncoded\source\repos\Aplikacija\Application-tests\obj\Debug\net5.0\Application-tests.pdb
 C:\Users\ncoded\source\repos\Aplikacija\Application-tests\obj\Debug\net5.0\Application-tests.genruntimeconfig.cache
+C:\Users\ncoded\source\repos\Aplikacija\Application-tests\bin\Debug\net5.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\ncoded\source\repos\Aplikacija\Application-tests\bin\Debug\net5.0\Microsoft.AspNetCore.Metadata.dll

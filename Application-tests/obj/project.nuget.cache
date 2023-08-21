@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Un7RDDIKLj81KLNqQgL65NpcRGm1dRbr4XjQZLiypFo5qJ+74GWTVFpsGwbYtkrH6O8JesTu0gTLoSIl/4zNWA==",
+  "dgSpecHash": "GKxZU36RMLox1zUQgnuK1HzrC4LNHyt9zVHT55XqOGVQGnUDBd2ymzEYQVwOIOPe/FTM5JVoc5W8Vqy80hBJlg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ncoded\\source\\repos\\Aplikacija\\Application-tests\\Application-tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ncoded\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\ncoded\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\ncoded\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.17\\microsoft.aspnetcore.authorization.5.0.17.nupkg.sha512",
     "C:\\Users\\ncoded\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\ncoded\\.nuget\\packages\\microsoft.aspnetcore.metadata\\5.0.17\\microsoft.aspnetcore.metadata.5.0.17.nupkg.sha512",
     "C:\\Users\\ncoded\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\ncoded\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
     "C:\\Users\\ncoded\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime\\2.2.0\\microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
