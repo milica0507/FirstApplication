@@ -34,12 +34,12 @@ namespace Aplikacija.Controllers
             }
         }
 
-        [HttpPost("login")]
-        public IActionResult LogIn([FromBody] UserVM user)
+        [HttpPost("login/{username}/{pass}")]
+        public IActionResult LogIn(string username,string pass)
         {
             try
             {
-                string token=_usersService.LogIn(user);
+                string token=_usersService.LogIn(username,pass);
                 return new ContentResult
                 {
                     ContentType = "text/plain",
@@ -50,6 +50,20 @@ namespace Aplikacija.Controllers
             catch (Exception e)
             {
 
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost("logout/{id}")]
+        public IActionResult LogOut(string id)
+        {
+            try
+            {
+                _usersService.LogOut(id);
+                return Ok("Log out");
+            }
+            catch (Exception e)
+            {
                 return BadRequest(e.Message);
             }
         }
@@ -82,6 +96,20 @@ namespace Aplikacija.Controllers
             {
 
                 return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("get-user-by-username/{username}")]
+        public IActionResult GetUserByUsername(string username)
+        {
+            try
+            {
+                var user = _usersService.GetUserByUsername(username);
+                return Ok(user);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
             }
         }
     }

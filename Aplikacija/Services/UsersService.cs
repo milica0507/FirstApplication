@@ -73,17 +73,30 @@ namespace Aplikacija.Services
                 }
             }
         }
-        public string LogIn(UserVM user)
+        public string LogIn(string username,string pass)
         {
-            var _user = _context.Users.Where(x => x.Username == user.Username).FirstOrDefault();
-            if (!VerifyPasswordHash(user.Password, _user.PasswordHash, _user.PasswordSalt)) 
+            var _user = _context.Users.Where(x => x.Username == username).FirstOrDefault();
+            if (!VerifyPasswordHash(pass, _user.PasswordHash, _user.PasswordSalt)) 
             {
                 return "Invalid password";
             }
             string token = CreateClaimUser(_user);
+            _user.Token = token;
+            _context.SaveChanges();
             return token;
 
         }
+
+        public void LogOut(string id)
+        {
+            var _user = _context.Users.Where(x => x.UserId == id).FirstOrDefault();
+            if (_user != null)
+            {
+                _user.Token = null;
+                _context.SaveChanges();
+            }
+        }
+
 
         private string CreateToken(List<Claim> claims)
         {
@@ -134,6 +147,20 @@ namespace Aplikacija.Services
                 _context.SaveChanges();
             }
 
+            return _user;
+        }
+
+        public object GetUserByUsername(string username)
+        {
+            var _user = _context.Users
+                .Where(x => x.Username == username)
+                .Select(x=>new
+                {
+                    FirstName=x.FirstName,
+                    LastName=x.LastName,
+                    NumberPhone=x.NumberPhone
+                })
+                .FirstOrDefault();
             return _user;
         }
     }
