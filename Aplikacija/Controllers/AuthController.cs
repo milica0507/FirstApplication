@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Aplikacija.Controllers
 {
-    [Route("api/author")]
+    [Route("api/auth")]
     public class AuthController : Controller
     {
         private UsersService _usersService;
