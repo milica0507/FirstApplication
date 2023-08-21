@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Aplikacija.Controllers
 {
+    [Route("api/author")]
     public class AuthorsController : Controller
     {
         private AuthorsService _authorsService;
@@ -19,16 +20,14 @@ namespace Aplikacija.Controllers
         }
 
 
-        [HttpPost]
-        [Route("AddAuthor")]
+        [HttpPost("add-author")]
         public IActionResult AddAuthor([FromBody] AuthorVM author)
         {
             _authorsService.AddAuthor(author);
             return Ok(author);
         }
 
-        [HttpGet]
-        [Route("GetAuthorWithBooksById/{id}")]
+        [HttpGet("get-author-with-books-by-id/{id}")]
         public IActionResult GetAuthorWithBooksById(string id)
         {
             try

@@ -12,7 +12,7 @@ using Aplikacija.ViewModels;
 
 namespace Aplikacija.Controllers
 {
-    
+    [Route("api/product")]
     public class ProductsController : Controller
     {
         private ProductsService _productsService;
@@ -21,91 +21,20 @@ namespace Aplikacija.Controllers
             _productsService = productsService;
         }
 
-        [HttpPost]
-        [Route("CreateProduct")]
+        [HttpPost("create-product")]
         public IActionResult CreateProduct([FromBody] ProductVM _product)
         {
             _productsService.AddProduct(_product);
             return Ok(_product);
         }
 
-        [HttpGet]
-        [Route("GetAllProducts")]
+        [HttpGet("get-all-products")]
         public IActionResult GetAllProducts()
         {
             var products=_productsService.GetAllProducts();
             return Ok(products);
         }
-        //private readonly ApplicationDbContext _context;
-
-        //public ProductsController(ApplicationDbContext context)
-        //{
-        //    _context = context;
-        //}
-
-
-        //[HttpGet]
-        //[Route("GetProducts")]
-        //public async Task<IActionResult> Index()
-        //{
-        //    var listOfProducts = await _context.Products.ToListAsync();
-
-        //    return Ok(listOfProducts);
-        //}
-
-
-
-
-
-        //[HttpPost]
-        //[Route("CreateProduct")]
-        //public async Task<IActionResult> Create([FromBody] Product product)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _context.Add(product);
-        //        await _context.SaveChangesAsync();
-        //       // return RedirectToAction(nameof(Index));
-        //    }
-        //    return Ok(product);
-        //}
-
-
-        //[HttpPut]
-        //[Route("EditProduct/{id}/{newPrice}")]
-        //public async Task<IActionResult> Edit(string id,int newPrice)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var product = await _context.Products.FindAsync(id);
-        //    if (product == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    product.Price = newPrice;
-        //    await _context.SaveChangesAsync();
-        //    return Ok("Succesfully chnaged price of product");      
-        //}
-
-
-
-
-
-
-        //[HttpDelete]
-        //[Route("DeleteConfirmed/{id}")]
-
-        //public async Task<IActionResult> DeleteConfirmed(string id)
-        //{
-        //    var product = await _context.Products.FindAsync(id);
-        //    _context.Products.Remove(product);
-        //    await _context.SaveChangesAsync();
-        //    return Ok("Deleted");
-        //}
-
+       
 
     }
 }

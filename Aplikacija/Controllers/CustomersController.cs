@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Aplikacija.Controllers
 {
+    [Route("api/customer")]
     public class CustomersController : Controller
     {
         private CustomersService _customersService;
@@ -15,8 +16,7 @@ namespace Aplikacija.Controllers
             _customersService = customersService;
         }
 
-        [HttpPost]
-        [Route("CreateCustomer")]
+        [HttpPost("create-customer")]
         public IActionResult CreateCustomer([FromBody] CustomerVM customer)
         {
             _customersService.AddCustomer(customer);

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Aplikacija.Controllers
 {
+    [Route("api/publisher")]
     public class PublisherController : Controller
     {
         public PublisherService _publisherService;
@@ -17,8 +18,7 @@ namespace Aplikacija.Controllers
             _publisherService = publisherService;
         }
 
-       [HttpPost]
-       [Route("CreatePublisher")]
+       [HttpPost("create-publisher")]
        public IActionResult CreatePublisher([FromBody] PublisherVM publisher)
        {
              _publisherService.AddPublisher(publisher);
@@ -26,8 +26,7 @@ namespace Aplikacija.Controllers
        }
        
 
-        [HttpGet]
-        [Route("GetPublisherData/{id}")]
+        [HttpGet("get-publisher-data/{id}")]
         public IActionResult GetPublisherData(string id)
         {
             try
@@ -43,8 +42,7 @@ namespace Aplikacija.Controllers
           
         }
 
-        [HttpGet]
-        [Route("GetAllPublishers")]
+        [HttpGet("get-all-publishers")]
         public IActionResult GetAllPublishers()
         {
             try

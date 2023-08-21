@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Aplikacija.Controllers
 {
+    [Route("api/book")]
     public class BooksController : Controller
     {
         //private readonly ApplicationDbContext _context;
@@ -21,8 +22,7 @@ namespace Aplikacija.Controllers
             _booksService = booksService;
         }
 
-        [HttpPost]
-        [Route("CreateBook")]
+        [HttpPost("create-book")]
         public IActionResult Create([FromBody] BookVM book)
         {
 
@@ -32,16 +32,14 @@ namespace Aplikacija.Controllers
 
         }
 
-        [HttpGet]
-        [Route("GetBooks")]
-        public IActionResult Get()
+        [HttpGet("get-books")]
+       public IActionResult Get()
         {
             var books=_booksService.GetAllBooks();
             return Ok(books);
         }
 
-        [HttpGet]
-        [Route("GetBookById/{id}")]
+        [HttpGet("get-book-by-id/{id}")]
         public IActionResult GetBookById(string id)
         {
             var book = _booksService.GetBookById(id);
@@ -50,16 +48,14 @@ namespace Aplikacija.Controllers
 
         
 
-        [HttpPut]
-        [Route("UpdateBook/{id}")]
+        [HttpPut("update-book/{id}")]
         public IActionResult UpdateBook(string id,[FromBody] BookVM book)
         {
             var _book = _booksService.UpdateBookById(id,book);
             return Ok(_book);
         }
 
-        [HttpDelete]
-        [Route("DeleteBook/{id}")]
+        [HttpDelete("delete-book/{id}")]
         public IActionResult DeleteBook(string id)
         {
             _booksService.DeleteBookById(id);
