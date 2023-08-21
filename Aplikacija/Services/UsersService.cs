@@ -112,5 +112,29 @@ namespace Aplikacija.Services
         };
             return CreateToken(claims);
         }
+
+
+        public void DeleteUser(string id)
+        {
+            var user = _context.Users.Where(x => x.UserId == id).FirstOrDefault();
+            if (user != null)
+            {
+                _context.Users.Remove(user);
+                _context.SaveChanges();
+            }
+        }
+
+        public User UpdateUsername(string id,string newUsername)
+        {
+            var _user = _context.Users.Where(x => x.UserId == id).FirstOrDefault();
+            if(_user != null)
+            {
+                _user.Username = newUsername;
+
+                _context.SaveChanges();
+            }
+
+            return _user;
+        }
     }
 }

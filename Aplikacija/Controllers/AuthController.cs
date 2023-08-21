@@ -54,5 +54,35 @@ namespace Aplikacija.Controllers
             }
         }
         
+        [HttpDelete("delete-user/{userId}")]
+        public IActionResult DeleteUser(string userId)
+        {
+            try
+            {
+                _usersService.DeleteUser(userId);
+                return Ok("Deleted user");
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+        }
+
+
+        [HttpPut("change-username/{idUser}")]
+        public IActionResult ChangeUsername(string idUser,string newUsername)
+        {
+            try
+            {
+                var user= _usersService.UpdateUsername(idUser, newUsername);
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
