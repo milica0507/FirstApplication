@@ -27,6 +27,14 @@ namespace Aplikacija.Services
             _context.SaveChanges();
         }
 
+        public Author UpdateAuthor(string idAuthor,string newName)
+        {
+            var _author = _context.Authors.Where(x => x.AuthorId == idAuthor).FirstOrDefault();
+            _author.FullName = newName;
+            _context.SaveChanges();
+            return _author;
+        }
+
         public AuthorWithBooksVM GetAuthorWithBooks(string authorId)
         {
             var _author = _context.Authors.Where(n => n.AuthorId == authorId).Select(author => new AuthorWithBooksVM()

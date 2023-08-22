@@ -50,5 +50,12 @@ namespace Aplikacija.Controllers
                return Ok();
             
         }
+
+        [HttpPut("change-name-of-author/{idAuthor}/{newName}")]
+        public IActionResult UpdateAuthor(string idAuthor,string newName)
+        {
+            var author = _authorsService.UpdateAuthor(idAuthor, newName);
+            return Ok(author);
+        }
     }
 }
